@@ -19,10 +19,12 @@ public final class RPN {
 	
 	static Logger logger = Logger.getLogger(RPN.class);
 	
+	private final String EXPRESSION_DELIMETER = " ";
+	
 	/**
 	 * Holds the RPN representation of the infix expression 
 	 */
-	private final String rpn;
+	private final List<String> rpn;
 	
 	/**
 	 * Prevent construction with no arguments
@@ -35,12 +37,12 @@ public final class RPN {
 	 * @param infix
 	 */
 	public RPN(String infix) {
-		rpn = convert(infix);
+		rpn = convertInfixtoRPN(infix);
 	}
 	/**
 	 * @return the rpn representation of the infix expression
 	 */
-	public String getRpn() {
+	public List<String> getTokenisedExpression() {
 		return rpn;
 	}
 
@@ -50,11 +52,10 @@ public final class RPN {
 	 * @param infix
 	 * @return the expression in RPN format
 	 */
-	private String convert(String infix) {
+	private List<String> convertInfixtoRPN(String infix) {
 		final List<String> outQueue = new ArrayList<String>();
 		final Deque<ExpressionSymbol> opStack = new ArrayDeque<ExpressionSymbol>();
-		List<String> tokens = Arrays.asList(infix.split(" "));
-		for(String elem : tokens) {
+		for(String elem : Arrays.asList(infix.split(EXPRESSION_DELIMETER))) {
 			ExpressionToken token = new ExpressionToken(elem);
 			if(token.isNumber()) {
 				outQueue.add(token.valueOf());
@@ -92,7 +93,7 @@ public final class RPN {
 			outQueue.add(opStack.pop().getSymbol());
 		}
 		logger.debug(outQueue.toString());
-		return outQueue.toString();
+		return outQueue;
 	}
 	
 
