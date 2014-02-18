@@ -7,7 +7,7 @@ package covalent.testnolib;
  * @author chris
  * Set of operators 
  */
-public enum Operator {
+public enum Operator implements ExpressionSymbol {
 	
 	PLUS("+",1),MINUS("-",1),MULTIPLY("*",2),DIVIDE("/",2);
 	

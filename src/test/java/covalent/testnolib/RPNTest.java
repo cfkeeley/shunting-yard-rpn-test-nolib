@@ -10,8 +10,6 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-import covalent.testnolib.rpn.RPN;
-
 /**
  * @author chris
  * Test expression to RPN (Reverse Polish Notation)
