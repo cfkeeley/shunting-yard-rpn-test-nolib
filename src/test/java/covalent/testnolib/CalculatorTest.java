@@ -13,14 +13,14 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 import rpn.RPN;
-import rpn.RPNParser;
+import rpn.Calculator;
 
 /**
  * @author chris
  *
  */
 @RunWith(Parameterized.class)
-public class RPNParserTest {
+public class CalculatorTest {
 
 	/**
 	 * The expression parameter 
@@ -36,15 +36,14 @@ public class RPNParserTest {
 	 * 
 	 * @param anExpression
 	 */
-	public RPNParserTest(String anExpression, double anExpectedValue) {
+	public CalculatorTest(String anExpression, double anExpectedValue) {
 		expression = anExpression;
 		expected = anExpectedValue;
 	}
 	
 	@Test
 	public final void test() {
-		RPNParser parser = new RPNParser(new RPN(expression));
-		assertEquals(parser.parse(), expected, 0d);
+		assertEquals(Calculator.calculate(expression), expected, 0d);
 	}
 
 

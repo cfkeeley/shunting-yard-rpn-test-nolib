@@ -16,21 +16,17 @@ import rpn.expression.ExpressionToken;
 
 /**
  * @author chris
- * Parse an RPN instance 
+ * Parse an expression 
  */
-public class RPNParser {
-	private final RPN expression;
-	static Logger logger = Logger.getLogger(RPNParser.class);
-	public RPNParser(RPN rpnExpression) {
-		expression = rpnExpression;
-	}
-	
+public class Calculator {
+	static Logger logger = Logger.getLogger(Calculator.class);
 	/**
 	 * Parse an RPN representation of an infix expression.
 	 * We know that we are only dealing with binary operators
 	 * @return
 	 */
-	public double parse() {
+	public static double calculate(String sum) {
+		RPN expression = new RPN(sum);
 		int MAX_OP_ARGS = 2;
 		final Deque<Double> numbers = new ArrayDeque<Double>();
 		for(ExpressionToken token : expression.getTokenisedExpression()) {
@@ -54,12 +50,5 @@ public class RPNParser {
 			}	
 		}
 		return (1 == numbers.size()) ? numbers.pop() : -1d;
-	}
-
-	/**
-	 * @return the expression
-	 */
-	public RPN getExpression() {
-		return expression;
 	}
 }
