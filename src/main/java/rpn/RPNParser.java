@@ -1,7 +1,7 @@
 /**
  * 
  */
-package expression.infix.parser.rpn;
+package rpn;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -9,6 +9,10 @@ import java.util.Deque;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+
+import rpn.expression.Expression;
+import rpn.expression.ExpressionFactory;
+import rpn.expression.ExpressionToken;
 
 /**
  * @author chris
@@ -28,30 +32,28 @@ public class RPNParser {
 	 */
 	public double parse() {
 		int MAX_OP_ARGS = 2;
-		List<String> rpn = expression.getTokenisedExpression();
-		final Deque<String> numbers = new ArrayDeque<String>();
-		for(String elem : rpn) {
-			ExpressionToken token = new ExpressionToken(elem);
+		final Deque<Double> numbers = new ArrayDeque<Double>();
+		for(ExpressionToken token : expression.getTokenisedExpression()) {
 			if(token.isNumber()) {
-				numbers.push(token.valueOf());
+				numbers.push(new Double(token.valueOf()));
 			}
 			else if(token.isOperator()) {
 				if(MAX_OP_ARGS > numbers.size()) {
 					logger.error(String.format("Operator:%s requires at least %d args", token.valueOf(), MAX_OP_ARGS));
 				}
 				else {
-					String[] args = new String[MAX_OP_ARGS];
+					ExpressionToken[] args = new ExpressionToken[MAX_OP_ARGS];
 					int max = MAX_OP_ARGS;
 					for(int pc = --max; pc >= 0; pc--) {
-						args[pc] = numbers.pop();
+						args[pc] = new ExpressionToken(numbers.pop());
 					}
-					Expression exp = ExpressionFactory.instance(Operator.instanceOf(token.valueOf()));
+					Expression exp = ExpressionFactory.instance(token);
 					double result = exp.evaluate(args[0], args[1]);
-					numbers.push(String.valueOf(result));
+					numbers.push(result);
 				}
 			}	
 		}
-		return (1 == numbers.size()) ? Double.valueOf(numbers.pop()) : -1d;
+		return (1 == numbers.size()) ? numbers.pop() : -1d;
 	}
 
 	/**

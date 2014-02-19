@@ -12,8 +12,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-import expression.infix.parser.rpn.RPN;
-import expression.infix.parser.rpn.RPNParser;
+import rpn.RPN;
+import rpn.RPNParser;
 
 /**
  * @author chris

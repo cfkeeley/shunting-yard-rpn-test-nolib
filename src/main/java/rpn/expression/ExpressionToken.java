@@ -1,7 +1,10 @@
 /**
  * 
  */
-package expression.infix.parser.rpn;
+package rpn.expression;
+
+import rpn.Operator;
+import rpn.Parentheses;
 
 
 /**
@@ -15,6 +18,14 @@ public class ExpressionToken {
 	
 	public ExpressionToken(String aToken) {
 		token = aToken;
+	}
+	
+	public ExpressionToken(int aToken) {
+		token = String.valueOf(aToken);
+	}
+	
+	public ExpressionToken(double aToken) {
+		token = String.valueOf(aToken);
 	}
 	
 	/**

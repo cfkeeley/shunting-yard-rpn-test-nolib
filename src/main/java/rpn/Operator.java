@@ -1,7 +1,10 @@
 /**
  * 
  */
-package expression.infix.parser.rpn;
+package rpn;
+
+import rpn.expression.ExpressionSymbol;
+import rpn.expression.ExpressionToken;
 
 /**
  * @author chris
@@ -31,9 +34,9 @@ public enum Operator implements ExpressionSymbol {
 	 * @param symbol
 	 * @return
 	 */
-	public static Operator instanceOf(String symbol) {
+	public static Operator instanceOf(ExpressionToken token) {
 		for(Operator op : values()) {
-			if(op.getSymbol().equalsIgnoreCase(symbol)) {
+			if(op.getSymbol().equalsIgnoreCase(token.valueOf())) {
 				return op;
 			}
 		}

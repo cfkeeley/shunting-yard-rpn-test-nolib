@@ -1,15 +1,18 @@
 /**
  * 
  */
-package expression.infix.parser.rpn;
+package rpn.expression;
+
+import rpn.Operator;
 
 /**
  * @author chris
  * fetch an implementation for the Operator
  */
 public class ExpressionFactory {
-	public static Expression instance(Operator op) {
+	public static Expression instance(ExpressionToken token) {
 		Expression exp = null;
+		Operator op = Operator.instanceOf(token);
 		switch(op) {
 			case PLUS:
 				exp = new Add();

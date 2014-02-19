@@ -35,5 +35,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	<groupId>expression.infix.parser.rpn</groupId>
+	<groupId>rpn</groupId>
 </project>

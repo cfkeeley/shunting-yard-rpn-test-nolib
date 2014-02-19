@@ -1,4 +1,4 @@
-package expression.infix.parser.rpn;
+package rpn.expression;
 
 public interface ExpressionSymbol {
 	public String getSymbol();

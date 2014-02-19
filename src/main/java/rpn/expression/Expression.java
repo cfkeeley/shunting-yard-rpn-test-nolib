@@ -1,12 +1,13 @@
 /**
  * 
  */
-package expression.infix.parser.rpn;
+package rpn.expression;
+
 
 /**
  * @author chris
  * Evaluate an expression for a binary operator
  */
 public interface Expression {
-	public double evaluate(String arg1, String arg2);
+	public double evaluate(ExpressionToken arg1, ExpressionToken arg2);
 }

@@ -1,4 +1,6 @@
-package expression.infix.parser.rpn;
+package rpn;
+
+import rpn.expression.ExpressionSymbol;
 
 
 /**
