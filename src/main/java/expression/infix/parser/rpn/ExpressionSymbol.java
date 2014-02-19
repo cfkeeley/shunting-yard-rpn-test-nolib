@@ -1,4 +1,4 @@
-package covalent.testnolib;
+package expression.infix.parser.rpn;
 
 public interface ExpressionSymbol {
 	public String getSymbol();

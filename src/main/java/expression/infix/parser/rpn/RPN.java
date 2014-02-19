@@ -1,7 +1,7 @@
 /**
  * 
  */
-package covalent.testnolib;
+package expression.infix.parser.rpn;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -63,15 +63,17 @@ public final class RPN {
 			else if(token.isOperator()) {
 	    		ExpressionSymbol op1 = Operator.instanceOf(token.valueOf());
 	    		ExpressionSymbol op2 = null;
-	    		
-	    		while((((null != (op2 = opStack.peek())) && Operator.isOperator(op2.getSymbol()))
-	    				&& op1.getPrecedence() == op2.getPrecedence())
-	    				||
-	    				op2 != null && op1.getPrecedence() < op2.getPrecedence()) 
+	    		/**
+	    		 * while there is at least one 'Operator' on the stack and either
+	    		 * its precedence is equal to or less than that of the current
+	    		 * operator
+	    		 */
+	    		while(null != (op2 = opStack.peek()) && 
+	    			Operator.isOperator(op2.getSymbol()) && 
+	    			op1.getPrecedence() <= op2.getPrecedence())
 	    		{
 	    			outQueue.add(opStack.pop().getSymbol());
 	    		}
-
 				opStack.push(op1);
 	    	}
 	    	else if(token.isLeftParentheses()) {
