@@ -100,6 +100,4 @@ public final class RPN {
 		}
 		return outQueue;
 	}
-	
-
 }

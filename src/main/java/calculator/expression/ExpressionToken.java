@@ -16,6 +16,10 @@ public class ExpressionToken {
 
 	private final String token;
 	
+	public String toString() {
+		return token;
+	}
+	
 	public ExpressionToken(String aToken) {
 		token = aToken;
 	}
