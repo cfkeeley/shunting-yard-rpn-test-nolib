@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rpn.expression;
+package calculator.expression;
 
 
 /**
@@ -11,7 +11,7 @@ package rpn.expression;
 class Divide implements Expression {
 
 	/* (non-Javadoc)
-	 * @see rpn.Expression#evaluate(java.lang.String, java.lang.String)
+	 * @see calculator.Expression#evaluate(java.lang.String, java.lang.String)
 	 */
 	public double evaluate(ExpressionToken arg1, ExpressionToken arg2) {
 		double left = Double.parseDouble(arg1.valueOf());

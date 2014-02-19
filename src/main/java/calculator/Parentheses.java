@@ -1,6 +1,6 @@
-package rpn;
+package calculator;
 
-import rpn.expression.ExpressionSymbol;
+import calculator.expression.ExpressionSymbol;
 
 
 /**

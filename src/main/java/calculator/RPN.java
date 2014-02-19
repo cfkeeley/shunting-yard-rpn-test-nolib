@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rpn;
+package calculator;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -11,8 +11,8 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import rpn.expression.ExpressionSymbol;
-import rpn.expression.ExpressionToken;
+import calculator.expression.ExpressionSymbol;
+import calculator.expression.ExpressionToken;
 
 /**
  * @author chris
@@ -43,7 +43,7 @@ public final class RPN {
 		rpn = convertInfixtoRPN(infix);
 	}
 	/**
-	 * @return the rpn representation of the infix expression
+	 * @return the calculator representation of the infix expression
 	 */
 	public List<ExpressionToken> getTokenisedExpression() {
 		return rpn;

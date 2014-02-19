@@ -35,5 +35,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	<groupId>rpn</groupId>
+	<groupId>calculator</groupId>
 </project>

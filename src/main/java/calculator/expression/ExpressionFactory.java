@@ -1,9 +1,9 @@
 /**
  * 
  */
-package rpn.expression;
+package calculator.expression;
 
-import rpn.Operator;
+import calculator.Operator;
 
 /**
  * @author chris

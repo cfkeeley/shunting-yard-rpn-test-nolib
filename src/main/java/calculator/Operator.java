@@ -1,10 +1,10 @@
 /**
  * 
  */
-package rpn;
+package calculator;
 
-import rpn.expression.ExpressionSymbol;
-import rpn.expression.ExpressionToken;
+import calculator.expression.ExpressionSymbol;
+import calculator.expression.ExpressionToken;
 
 /**
  * @author chris

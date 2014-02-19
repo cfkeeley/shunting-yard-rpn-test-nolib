@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rpn;
+package calculator;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -10,9 +10,9 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import rpn.expression.Expression;
-import rpn.expression.ExpressionFactory;
-import rpn.expression.ExpressionToken;
+import calculator.expression.Expression;
+import calculator.expression.ExpressionFactory;
+import calculator.expression.ExpressionToken;
 
 /**
  * @author chris

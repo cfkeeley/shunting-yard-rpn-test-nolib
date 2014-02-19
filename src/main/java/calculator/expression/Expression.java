@@ -1,7 +1,7 @@
 /**
  * 
  */
-package rpn.expression;
+package calculator.expression;
 
 
 /**

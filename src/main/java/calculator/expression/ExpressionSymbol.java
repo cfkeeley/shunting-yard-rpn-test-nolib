@@ -1,4 +1,4 @@
-package rpn.expression;
+package calculator.expression;
 
 public interface ExpressionSymbol {
 	public String getSymbol();

@@ -12,8 +12,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
-import rpn.RPN;
-import rpn.Calculator;
+import calculator.Calculator;
+import calculator.RPN;
 
 /**
  * @author chris
