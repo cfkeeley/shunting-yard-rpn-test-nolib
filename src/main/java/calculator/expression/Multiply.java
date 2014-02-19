@@ -11,7 +11,7 @@ package calculator.expression;
 class Multiply implements Expression {
 
 	/* (non-Javadoc)
-	 * @see calculator.Expression#evaluate(java.lang.String, java.lang.String)
+	 * @see calculator.Expression#evaluate(ExpressionToken, ExpressionToken)
 	 */
 	public double evaluate(ExpressionToken arg1, ExpressionToken arg2) {
 		double left = Double.parseDouble(arg1.valueOf());

@@ -16,7 +16,8 @@ import calculator.expression.ExpressionToken;
 
 /**
  * @author chris
- * Parse an expression 
+ * Calculator is an implementation of the postfix algorithm as defined here:
+ * http://en.wikipedia.org/wiki/Reverse_Polish_notation 
  */
 public class Calculator {
 	static Logger logger = Logger.getLogger(Calculator.class);

@@ -16,7 +16,9 @@ import calculator.expression.ExpressionToken;
 
 /**
  * @author chris
- * Convert an infix expression to Reverse Polish Notation (RPN)
+ * Convert an infix expression to postfix, Reverse Polish Notation (RPN) using an 
+ * implementation of the shunting yard algorithm as defined here:
+ * http://en.wikipedia.org/wiki/Shunting-yard_algorithm
  */
 public final class RPN {
 	
@@ -36,26 +38,26 @@ public final class RPN {
 	private RPN() {rpn=null;}
 	
 	/**
-	 * Construct an RPN representation of the infix expression
+	 * Construct a postfix representation of the infix expression
 	 * @param infix
 	 */
 	public RPN(String infix) {
-		rpn = convertInfixtoRPN(infix);
+		rpn = toPostfix(infix);
 	}
+	
 	/**
-	 * @return the calculator representation of the infix expression
+	 * @return the postfix representation of the infix expression
 	 */
 	public List<ExpressionToken> getTokenisedExpression() {
 		return rpn;
 	}
-
 	
 	/**
-	 * Convert an infix expression to an RPN representation
+	 * Convert an infix expression to postfix
 	 * @param infix
-	 * @return the expression in RPN format
+	 * @return the expression in postfix format
 	 */
-	private List<ExpressionToken> convertInfixtoRPN(String infix) {
+	private List<ExpressionToken> toPostfix(String infix) {
 		final List<ExpressionToken> outQueue = new ArrayList<ExpressionToken>();
 		final Deque<ExpressionSymbol> opStack = new ArrayDeque<ExpressionSymbol>();
 		for(String elem : Arrays.asList(infix.split(EXPRESSION_DELIMETER))) {
@@ -90,9 +92,8 @@ public final class RPN {
 	    		opStack.pop();
 	    	}
 	    }
-		
 		/**
-		 * Pop any remaining operators to the out queue
+		 * Pop any remaining operators to the outqueue
 		 */
 		while(null != opStack.peek()) {
 			outQueue.add(new ExpressionToken(opStack.pop().getSymbol()));

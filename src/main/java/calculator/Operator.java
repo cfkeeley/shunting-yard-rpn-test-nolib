@@ -8,7 +8,7 @@ import calculator.expression.ExpressionToken;
 
 /**
  * @author chris
- * Set of operators 
+ * Set of operators used in the expressions
  */
 public enum Operator implements ExpressionSymbol {
 	

@@ -10,7 +10,7 @@ import calculator.Parentheses;
 /**
  * @author chris
  * A wrapper implementing a set of convenience methods
- * for establishing facts about the token 
+ * for establishing information about the token 
  */
 public class ExpressionToken {
 
@@ -57,14 +57,26 @@ public class ExpressionToken {
 		return isNumber;
 	}
 	
+	/**
+	 * Establish if this token is an calculator.Operator
+	 * @return true if the token is a calculator.Operator
+	 */
 	public boolean isOperator() {
 		return Operator.isOperator(token);
 	}
 	
+	/**
+	 * Establish if this token is a calculator.Parentheses.LEFT_PARENTHESES
+	 * @return true if the token is a calculator.Parentheses.LEFT_PARENTHESES
+	 */
 	public boolean isLeftParentheses() {
 		return token.equals(Parentheses.LEFT_PARENTHESES.getSymbol());
 	}
 	
+	/**
+	 * Establish if this token is a calculator.Parentheses.RIGHT_PARENTHESES
+	 * @return true if the token is a calculator.Parentheses.RIGHT_PARENTHESES
+	 */
 	public boolean isRightParentheses() {
 		return token.equals(Parentheses.RIGHT_PARENTHESES.getSymbol());
 	}

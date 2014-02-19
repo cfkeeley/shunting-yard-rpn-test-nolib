@@ -6,12 +6,12 @@ package calculator.expression;
 
 /**
  * @author chris
- * An ArithmeticException will be thrown upon attempted division by zero
+ * Divide the left hand argument by the right hand argument.
+ * An ArithmeticException will be thrown if the right hand argument is zero.
  */
 class Divide implements Expression {
-
 	/* (non-Javadoc)
-	 * @see calculator.Expression#evaluate(java.lang.String, java.lang.String)
+	 * @see calculator.Expression#evaluate(ExpressionToken, ExpressionToken)
 	 */
 	public double evaluate(ExpressionToken arg1, ExpressionToken arg2) {
 		double left = Double.parseDouble(arg1.valueOf());

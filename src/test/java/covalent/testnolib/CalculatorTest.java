@@ -17,23 +17,24 @@ import calculator.RPN;
 
 /**
  * @author chris
- *
+ * Test parsing/execution of a series of Infix expressions against their
+ * expected values.
  */
 @RunWith(Parameterized.class)
 public class CalculatorTest {
 
 	/**
-	 * The expression parameter 
+	 * The input argument
 	 */
 	private String expression;
 	
 	/**
-	 * The expected outcome
+	 * The expected result for the input argument
 	 */
 	private double expected;
 	
 	/**
-	 * 
+	 * Construct with the input argument and expected result
 	 * @param anExpression
 	 */
 	public CalculatorTest(String anExpression, double anExpectedValue) {
@@ -41,17 +42,19 @@ public class CalculatorTest {
 		expected = anExpectedValue;
 	}
 	
+	/**
+	 * Test the calculate method
+	 */
 	@Test
 	public final void test() {
 		assertEquals(Calculator.calculate(expression), expected, 0d);
 	}
 
-
 	/**
-	 * The test arguments for calculate
-	 * @return
+	 * The input arguments and expected results 
+	 * @return a list of arguments and expected result pairs 
 	 */
-	@Parameters(name = "{index}: parse({0})=({1}")
+	@Parameters(name = "{index}: parse({0})=({1})")
     public static Iterable<Object[]> data() {
         return Arrays.asList(new Object[][] { 
         		{ "1 + 1", 2d }, 

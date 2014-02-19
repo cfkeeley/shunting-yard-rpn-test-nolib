@@ -7,7 +7,7 @@ import calculator.Operator;
 
 /**
  * @author chris
- * fetch an implementation for the Operator
+ * fetch an implementation of Expression for the specified Operator
  */
 public class ExpressionFactory {
 	public static Expression instance(ExpressionToken token) {

@@ -4,7 +4,7 @@ import calculator.expression.ExpressionSymbol;
 
 
 /**
- * Left and right parenthesis
+ * Left and right parentheses
  * @author chris
  */
 public enum Parentheses implements ExpressionSymbol {
