@@ -51,12 +51,14 @@ public class ExpressionToken {
 		}catch(NumberFormatException e) {
 			isNumber = false;
 		}
-
-		try {
-			Float.parseFloat(token);
-			isNumber = true;
-		}catch(NumberFormatException e) {
-			isNumber = false;
+		
+		if(!isNumber) {
+			try {
+				Float.parseFloat(token);
+				isNumber = true;
+			}catch(NumberFormatException e) {
+				isNumber = false;
+			}
 		}
 		return isNumber;
 	}

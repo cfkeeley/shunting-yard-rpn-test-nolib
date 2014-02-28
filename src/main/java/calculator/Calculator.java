@@ -39,12 +39,12 @@ public class Calculator {
 					logger.error(String.format("Operator:%s requires at least %d args", token.valueOf(), MAX_OP_ARGS));
 				}
 				else {
-					ExpressionToken[] args = new ExpressionToken[MAX_OP_ARGS];
+					final ExpressionToken[] args = new ExpressionToken[MAX_OP_ARGS];
 					int max = MAX_OP_ARGS;
 					for(int pc = --max; pc >= 0; pc--) {
 						args[pc] = new ExpressionToken(numbers.pop());
 					}
-					Expression exp = ExpressionFactory.instance(token);
+					final Expression exp = ExpressionFactory.instance(token);
 					double result = exp.evaluate(args[0], args[1]);
 					numbers.push(result);
 				}

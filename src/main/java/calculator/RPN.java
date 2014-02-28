@@ -61,7 +61,7 @@ public final class RPN {
 		final List<ExpressionToken> outQueue = new ArrayList<ExpressionToken>();
 		final Deque<ExpressionSymbol> opStack = new ArrayDeque<ExpressionSymbol>();
 		for(String elem : Arrays.asList(infix.split(EXPRESSION_DELIMETER))) {
-			ExpressionToken token = new ExpressionToken(elem);
+			final ExpressionToken token = new ExpressionToken(elem);
 			if(token.isNumber()) {
 				outQueue.add(token);
 			} 
