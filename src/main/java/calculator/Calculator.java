@@ -36,7 +36,7 @@ public class Calculator {
 			}
 			else if(token.isOperator()) {
 				if(MAX_OP_ARGS > numbers.size()) {
-					logger.error(String.format("Operator:%s requires at least %d args", token.valueOf(), MAX_OP_ARGS));
+					logger.error(String.format("Operator:%s requires %d args", token.valueOf(), MAX_OP_ARGS));
 				}
 				else {
 					final ExpressionToken[] args = new ExpressionToken[MAX_OP_ARGS];
